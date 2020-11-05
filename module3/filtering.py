@@ -9,15 +9,16 @@ sw += ["les", "plus", "cette", "fait", "faire", "être", "deux", "comme", "dont"
        "ils", "bien", "sans", "peut", "tous", "après", "ainsi", "donc", "cet", "sous",
        "celle", "entre", "encore", "toutes", "pendant", "moins", "dire", "cela", "non",
        "faut", "trois", "aussi", "dit", "avoir", "doit", "contre", "depuis", "autres",
-       "van", "het", "autre", "jusqu"]
+       "van", "het", "autre", "jusqu", "leurs", "elles", "faite", "etc", "premier", "abord", "aucune", "car", 
+       "celui", "lorsque", "ville", "bruxelle","bruxelles"]
 sw = set(sw)
 
 
 def filtering(year):
     path = f"{year}.txt"
-    output = open(f"{year}_keywords.txt", "w")
+    output = open(f"{year}_keywords.txt", "w", encoding='utf-8')
 
-    with open(path) as f:
+    with open(path, encoding='utf-8') as f:
         text = f.read()
         words = nltk.wordpunct_tokenize(text)
         kept = [w.lower() for w in words if len(
